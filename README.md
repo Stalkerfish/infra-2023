@@ -13,7 +13,7 @@ curl -x POST localhost:3000/?username=admin&password=123456 # Cria uma sessão p
 curl -x GET  localhost:3000/exist/:session                  # Verifica se a sessão existe
 ```
 
-Para os 3 caminhos funcionarem precisa tem um banco de dados [Redis](https://redis.io/docs/about/) rodando em localhost:6379, recomendamos subir o Redis em um container do docker.
+Para os 3 caminhos funcionarem o banco de dados [Redis](https://redis.io/docs/about/) precisa estar rodando em localhost:6379, recomendamos subir o Redis em um container do docker.
 
 Para iniciar o servidor basta rodar o seguinte comando:
 ```shell
@@ -23,12 +23,12 @@ Para instalar go basta seguir o seguinte tutorial https://go.dev/doc/install, po
 
 ## Objetivos
 
-O objetivo do projeto é que um desenvolvedor possa subir o servidor em diversas máquinas com um só comando/script, por isso criamos níveis para pode te auxiliar.
+O objetivo do projeto é que um desenvolvedor possa subir o servidor em diversas máquinas com um só comando/script, por isso criamos níveis para poder te auxiliar.
 
-Definimos os objetivos em 3 níveis, Desenvolvimento Local, Produção, Monitoramento. Não é necessário completar todos os níveis.
+Definimos os objetivos em 3 níveis: Desenvolvimento Local, Produção, Monitoramento. Não é necessário completar todos os níveis.
 
 ### Desenvolvimento local
-Esse nível tem como objetivo que o desenvolvedor possa subir um ambiente de desenvolvimento na sua máquina local, para isso as ferramentas que recomendados é o [Docker](https://docs.docker.com/get-docker/) junto com o [Docker Compose](https://docs.docker.com/compose/).
+Esse nível tem como objetivo que o desenvolvedor possa subir um ambiente de desenvolvimento na sua máquina local, para isso as ferramentas que recomensamos são o [Docker](https://docs.docker.com/get-docker/) junto com o [Docker Compose](https://docs.docker.com/compose/).
 
 Com o Docker instalado na sua máquina podemos completar a seguinte lista: 
 - [ ] Criar um Dockerfile para fazer o build e iniciar o servidor
@@ -37,7 +37,7 @@ Com o Docker instalado na sua máquina podemos completar a seguinte lista:
 - [ ] Fazer upload da imagem Docker do servidor para o registry do GitLab
 
 ### Produção
-Esse nível tem como objetivo que o desenvolvedor possa fazer o deploy do seu projeto em um servidor, para isso as ferramentas que recomendados é o [Kubernetes](https://kubernetes.io/docs/concepts/overview/) junto com o [minikube](https://minikube.sigs.k8s.io/docs/) e o [Helm](https://helm.sh/docs/).
+Esse nível tem como objetivo que o desenvolvedor possa fazer o deploy do seu projeto em um servidor, para isso as ferramentas que recomendamos são o [Kubernetes](https://kubernetes.io/docs/concepts/overview/) junto com o [minikube](https://minikube.sigs.k8s.io/docs/) e o [Helm](https://helm.sh/docs/).
 
 Esse nível é totalmente opcional e para iniciar ele é bom ter terminado o nível de desenvolvimento local.
 
@@ -48,9 +48,9 @@ Esse nível é totalmente opcional e para iniciar ele é bom ter terminado o ní
 - [ ] Criar um ingress para o servidor
 
 ### Monitoramento
-Esse nível tem como objetivo que se possa monitorar o servidor, para isso as ferramentas que recomendados é o [Prometheus](https://prometheus.io/docs/introduction/overview/) junto com o [Grafana](https://grafana.com/docs/grafana/latest/getting-started/).
+Esse nível tem como objetivo que se possa monitorar o servidor, para isso as ferramentas que recomendamos são o [Prometheus](https://prometheus.io/docs/introduction/overview/) junto com o [Grafana](https://grafana.com/docs/grafana/latest/getting-started/).
 
-Esse nível é totalmente opcional e para iniciar ele é bom ter terminado o nível Docker.
+Esse nível é totalmente opcional e para iniciar ele é bom ter terminado o nível desenvolvimento local.
 
 - [ ] Adicionar log no servidor
 - [ ] Adicionar métricas do Prometheus no servidor 
@@ -77,7 +77,7 @@ Também vamos avaliar outros aspectos da sua solução, como:
 
 O prazo de entrega será até 23:59 do dia 24/09
 
-Quando terminar todo seu desafio adicione o usuário @thiago-felipe como membro (coloque a role "Maintainer" ao adicionar) do seu projeto privado para ser avaliado, também preencha o seguinte formulário para confirmar a sua entrega: .
+Quando terminar todo seu desafio adicione o usuário @thiago-felipe como membro (coloque a role "Maintainer" ao adicionar) do seu projeto privado para ser avaliado, também preencha o seguinte formulário para confirmar a sua entrega: https://forms.gle/P8cVf3fxfBq3bkPS8.
 
 ## Dúvidas
 Caso tenha alguma dúvida em relação ao desafio abra uma [issue](https://gitlab.com/ltellesfl/desafio-infra/-/issues/new) nesse projeto público. Sua dúvida pode ser a mesma de outros.
