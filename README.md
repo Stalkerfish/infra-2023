@@ -81,7 +81,7 @@ Caso você não tenha nenhuma experiências com docker, kubernetes e prometheus 
 ### Kubernetes
 - Explicação sobre o que é o kubernetes: [Kubernetes Explained in 100 Seconds](https://www.youtube.com/watch?v=PziYflu8cB8)
 - Tutorial em português sobre o kubernetes: [TUDO O QUE VOCÊ PRECISA SABER SOBRE KUBERNETES PARA PASSAR NA ENTREVISTA!](https://www.youtube.com/watch?v=zEOeukcJl6E)
-- Tutorial em inglês sobre o kubernetes: [https://www.youtube.com/watch?v=s_o8dwzRlu4](https://www.youtube.com/watch?v=zEOeukcJl6E)
+- Tutorial em inglês sobre o kubernetes: [Kubernetes Crash Course for Absolute Beginners [NEW]](https://www.youtube.com/watch?v=s_o8dwzRlu4)
 - Tutorial aprofundo em inglês sobre o kubernetes: [Kubernetes Tutorial for Beginners [FULL COURSE in 4 Hours]](https://www.youtube.com/watch?v=X48VuDVv0do)
 - Explicação sobre o que é o Helm: [What is Helm?](https://www.youtube.com/watch?v=fy8SHvNZGeE)
 
