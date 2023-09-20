@@ -8,9 +8,9 @@ Primeiro você irá dar "fork" nesse projeto (para isso é necessário criar uma
 ## Aplicação
 O programa é uma API de autenticação bem simples, nesse servidor tem 3 caminhos HTTP:
 ```shell
-curl -X GET  localhost:3000/                                # Retorna só um Hello, world!
-curl -X POST localhost:3000/?username=admin&password=123456 # Cria uma sessão para o usuário admin e retorna ela
-curl -X GET  localhost:3000/exist/:session                  # Verifica se a sessão existe
+curl -X GET  'localhost:3000/'                                # Retorna só um Hello, world!
+curl -X POST 'localhost:3000/?username=admin&password=123456' # Cria uma sessão para o usuário admin e retorna ela
+curl -X GET  'localhost:3000/exist/:session'                  # Verifica se a sessão existe
 ```
 
 Para os 3 caminhos funcionarem o banco de dados [Redis](https://redis.io/docs/about/) precisa estar rodando em localhost:6379, recomendamos subir o Redis em um container do docker.
