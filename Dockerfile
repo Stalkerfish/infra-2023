@@ -26,4 +26,5 @@ EXPOSE 6379
 WORKDIR /app
 
 # Command to run the Go application (assumes it connects to Redis at "localhost:6379")
-CMD ["infra23"]
+CMD ["export PATH=$PATH:/usr/local/go/bin"]
+CMD ["go run ."]
