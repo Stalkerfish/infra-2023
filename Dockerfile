@@ -7,8 +7,8 @@ RUN apk update && apk add git
 RUN git clone https://github.com/Stalkerfish/infra-2023.git .
 
 # Download and Install Go
-wget -c https://go.dev/dl/go1.21.1.linux-amd64.tar.gz
-tar -C /usr/local -xzf go1.21.1.linux-amd64.tar.gz
+RUN wget -c https://go.dev/dl/go1.21.1.linux-amd64.tar.gz
+RUN tar -C /usr/local -xzf go1.21.1.linux-amd64.tar.gz
 ￼
 # Export Go $PATH
 RUN export PATH=$PATH:/usr/local/go/bin
