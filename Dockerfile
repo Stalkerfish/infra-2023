@@ -19,12 +19,12 @@ FROM alpine:latest
 RUN apk --no-cache add redis
 
 # Copy the built Go application from the previous stage
-COPY --from=builder /app/infra23 /usr/local/bin/infra23
+COPY --from=builder /app/infra23 $HOME/infra23
 
 # Expose the Redis port and specify the working directory
 EXPOSE 6379
-WORKDIR /app
+WORKDIR $HOME
 
 # Command to run the Go application (assumes it connects to Redis at "localhost:6379")
 CMD ["export PATH=$PATH:/usr/local/go/bin"]
-CMD ["go run ."]
+CMD ["infra23"]
