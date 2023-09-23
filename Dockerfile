@@ -1,30 +1,25 @@
-# Build the Go application
-
-FROM golang:latest AS builder
-
-WORKDIR /app
-
-# Clone your Go application from Git
-RUN apt-get update && apt-get install -y git
-RUN git clone https://github.com/Stalkerfish/infra-2023.git .
-
-# Build the Go application
-RUN go build -o infra23
-
-# Create a production image
+# Using an Alpine image as the base
 
 FROM alpine:latest
 
-# Install Redis
-RUN apk --no-cache add redis
+# Clone your Go application from Git
+RUN apk update && apk add git
+RUN git clone https://github.com/Stalkerfish/infra-2023.git .
 
-# Copy the built Go application from the previous stage
-COPY --from=builder /app/infra23 $HOME/infra23
+# Download and Install Go
+wget -c https://go.dev/dl/go1.21.1.linux-amd64.tar.gz
+tar -C /usr/local -xzf go1.21.1.linux-amd64.tar.gz
+￼
+# Export Go $PATH
+RUN export PATH=$PATH:/usr/local/go/bin
+
+# Install Redis
+RUN apk --no-cache add redis && \ 
+ rm -rf /var/cache/apk/*
 
 # Expose the Redis port and specify the working directory
 EXPOSE 6379
-WORKDIR $HOME
+WORKDIR /infra-2023
 
 # Command to run the Go application (assumes it connects to Redis at "localhost:6379")
-CMD ["export PATH=$PATH:/usr/local/go/bin"]
-CMD ["infra23"]
+CMD ["go version"]
