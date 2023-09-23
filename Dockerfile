@@ -26,5 +26,8 @@ VOLUME ["/data"]
 
 WORKDIR infra-2023
 
+# Build go backend
+RUN go build -o infra0
+
 # Command to run the Go application (assumes it connects to Redis at "localhost:6379")
-CMD ["go run ."]
+CMD ["./infra0"]
