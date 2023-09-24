@@ -8,23 +8,22 @@ ENV PATH /usr/local/go/bin:$PATH
 RUN apk update && apk add --no-cache redis git curl
 RUN git clone https://github.com/Stalkerfish/infra-2023.git
 
+WORKDIR infra-2023
+
 # Install GO
-COPY go21.tar.gz go21.tar.gz
 RUN tar -C /usr/local -xzf go21.tar.gz
 
 # Expose the Redis port and specify
-EXPOSE 6379
+# EXPOSE 6379
 
 # Specify the Redis data directory
-VOLUME ["/data"]
+# VOLUME ["/data"]
 
 # Set the Redis configuration file location
 # ENV REDIS_CONFIG_FILE /etc/redis/redis.conf
 
 # Copy a custom Redis configuration file into the image (optional)
 # COPY redis.conf $REDIS_CONFIG_FILE
-
-WORKDIR infra-2023
 
 # Build go backend
 RUN go build -o infra0
