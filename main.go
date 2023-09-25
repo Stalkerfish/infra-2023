@@ -84,7 +84,7 @@ func main() {
 	url = host + ":" + port
 
 	redisClient := redis.NewClient(&redis.Options{ //nolint:exhaustruct
-		Addr:     "localhost:6379",
+		Addr:     "redis:6379",
 		Password: "redis",
 		DB:       0,
 	})
