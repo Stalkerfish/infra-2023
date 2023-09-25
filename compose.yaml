@@ -1,12 +1,12 @@
 services:
   backend:
     environment:
-      - PORT=2121
+      - PORT=${port}
       - HOST=0.0.0.0
     build: .
     ports:
-      - "8000:2121"
+      - "${port}:${port}"
   redis:
     image: "redis:alpine"
     ports:
-      - "6379:6379"
+      - "${REDISPORT}:${REDISPORT}"
