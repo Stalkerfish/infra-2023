@@ -73,7 +73,15 @@ func createRoutes(app *fiber.App, redisClient *redis.Client) {
 func main() {
 	app := fiber.New()
 
-	PORT:= os.Getenv("PORT")
+
+	var port string
+	port = os.Getenv("PORT")
+
+	var host string
+	host = os.Getenv("HOST")
+
+	var url string
+	url = host + ":" + port
 
 	redisClient := redis.NewClient(&redis.Options{ //nolint:exhaustruct
 		Addr:     "localhost:6379",
@@ -83,8 +91,8 @@ func main() {
 
 	createRoutes(app, redisClient)
 
-	err := app.Listen(PORT)
+	err := app.Listen(url)
 	if err != nil {
-		log.Panicf("[ERROR] - Error listening on port 3000: %v", err)
+		log.Panicf("[ERROR] - Error listening on port: %s", os.Getenv("PORT"))
 	}
 }
